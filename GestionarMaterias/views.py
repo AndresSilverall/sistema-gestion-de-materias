@@ -5,4 +5,4 @@ from . models import MaricularMaterias
 def home(request):
     materias = MaricularMaterias.objects.all()
     contexto = {"materias": materias}
-    return render(request, "home.html", context=contexto)
+    return render(request, "gestionMaterias.html", context=contexto)
