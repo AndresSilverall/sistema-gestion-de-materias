@@ -22,3 +22,6 @@ def register_topic(request):
 def info_user(request):
     return render(request, "contacto.html")
 
+
+def form_login(request):
+    return render(request, "login.html")

@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+
+{% block title%} Iniciar Session {% endblock %}
+{% block body%}
+<form>
+    <!-- Email input -->
+    <div class="d-flex justify-content-center align-items-center" style="max-width: 400px;">
+        <input type="email" id="form2Example1" class="form-control" />
+        <br>
+        <label class="form-label" for="form2Example1">Email: </label>
+      
+    </div>
+  
+    <!-- Password input -->
+    <div class="form-outline mb-4" style="max-width: 400px;">
+      <input type="password" id="form2Example2" class="form-control" />
+      <label class="form-label" for="form2Example2">Contraseña</label>
+    </div>
+  
+    <!-- 2 column grid layout for inline styling -->
+    <div class="row mb-4">
+      <div class="col d-flex justify-content-center">
+      </div>
+  
+      
+    </div>
+  
+    <!-- Submit button -->
+    <button type="button" class="btn btn-primary btn-block mb-4">Ingresar</button>
+  
+    <!-- Register buttons -->
+    <div class="text-center">
+      <p>No estas registrado? <a href="#!">Registrarse</a></p>
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-facebook-f"></i>
+      </button>
+  
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-google"></i>
+      </button>
+  
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-twitter"></i>
+      </button>
+  
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-github"></i>
+      </button>
+    </div>
+  </form>
+
+{% endblock %}
