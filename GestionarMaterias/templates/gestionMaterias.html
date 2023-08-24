@@ -1,4 +1,5 @@
 {% extends "main.html" %}
+{% load static %}
 
 {% block title %} Gestion de cursos {% endblock %}
 
@@ -43,6 +44,7 @@
         <table class="table table-striped">
             <thhead>
                 <tr>
+                    <th> #</th>
                     <th>Codigo</th>
                     <th>Nombre</th>
                     <th>Creditos</th>
@@ -53,15 +55,15 @@
             <tbody>
                 {% for materia in materias %}
                 <tr>
-                    
+                    <td>{{forloop.counter}}</td>
                     <td>{{materia.id}}</td>
                     <td>{{materia.nombre}}</td>
                     <td>{{materia.creditos}}</td>
                     <td>{{materia.fecha|date:"Y-m-d H:i"}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Botones de Acción">
-                          <button class="btn btn-sm btn-primary" type="button">Actualizar</button>
-                          <button class="btn btn-sm btn-danger" type="button">Eliminar</button>
+                          <button id="update" class="btn btn-sm btn-primary" type="button">Actualizar</button>
+                          <button id="delete" class="btn btn-sm btn-danger" onclick=getDeletebtn() type="button">Eliminar</button>
                         </div>
                       </td>
                                           
@@ -71,5 +73,6 @@
         </table>
     </div>
 </div>
+<script src="{% static 'GestionarMaterias/event.js'}"></script>
 </div>
 {% endblock %}
