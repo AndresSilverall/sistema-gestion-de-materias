@@ -9,10 +9,10 @@
         <h1> Gestion de materias</h1>
         <div class="card">
             <div class="card-body">
-                <form action="{% url 'home' %}" method="POST">
+                <form action="{% url 'register' %}" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
-                        <input type="text"  name="codigo" class="form-control" placeholder="Codigo" minlength="4" max="4" required>
+                        <input type="text"  name="codigo" class="form-control" placeholder="Codigo" max="4" required>
                     </div>
                     <div class="form-group">
                         <input type="text"  name="nombre" class="form-control" placeholder="Nombre"  max="40" required>
@@ -27,7 +27,13 @@
                 </form>
             </div>
         </div>
-       
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
 
     </div>
 
