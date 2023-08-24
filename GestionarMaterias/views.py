@@ -10,15 +10,15 @@ def home(request):
 
 
 def register_topic(request):
-    codigo = request.POST["codigo"]
-    nombre = request.POST["nombre"]
-    creditos = request.POST["creditos"]
+    codigo = request.POST.get("codigo")
+    nombre = request.POST.get("nombre")
+    creditos = request.POST.get("creditos")
     if request.method == "POST":
         materias = MaricularMaterias.objects.create(id=codigo, nombre=nombre, creditos=creditos)
         materias.save()
         messages.success(request, '¡Materia matriculada con exito!')
 
-        return redirect("register")
+        return redirect("home")
     
     return render(request, "gestionMaterias.html")
 
