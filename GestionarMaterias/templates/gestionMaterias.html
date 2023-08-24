@@ -43,10 +43,11 @@
         <table class="table table-striped">
             <thhead>
                 <tr>
-                    <th> Codigo</th>
-                    <th> Nombre</th>
-                    <th> Creditos</th>
-                    <th> Fecha</th>
+                    <th>Codigo</th>
+                    <th>Nombre</th>
+                    <th>Creditos</th>
+                    <th>Fecha</th>
+                    <th>Accion</th>
                 </tr>
             </thhead>
             <tbody>
@@ -57,6 +58,13 @@
                     <td>{{materia.nombre}}</td>
                     <td>{{materia.creditos}}</td>
                     <td>{{materia.fecha|date:"Y-m-d H:i"}}</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Botones de Acción">
+                          <button class="btn btn-sm btn-primary" type="button">Actualizar</button>
+                          <button class="btn btn-sm btn-danger" type="button">Eliminar</button>
+                        </div>
+                      </td>
+                                          
                 </tr>
                 {% endfor %}
             </tbody>
