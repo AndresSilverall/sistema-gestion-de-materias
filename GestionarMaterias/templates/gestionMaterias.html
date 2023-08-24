@@ -52,10 +52,11 @@
             <tbody>
                 {% for materia in materias %}
                 <tr>
+                    
                     <td>{{materia.id}}</td>
                     <td>{{materia.nombre}}</td>
                     <td>{{materia.creditos}}</td>
-                    <td>{{materia.fecha}}</td>
+                    <td>{{materia.fecha|date:"Y-m-d H:i"}}</td>
                 </tr>
                 {% endfor %}
             </tbody>
