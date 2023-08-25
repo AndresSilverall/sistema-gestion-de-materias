@@ -1,5 +1,5 @@
 {% extends "main.html" %}
-{% load static %}
+
 
 {% block title %} Gestion de cursos {% endblock %}
 
@@ -63,7 +63,7 @@
                     <td>
                         <div class="btn-group" role="group" aria-label="Botones de Acción">
                           <button id="update" class="btn btn-sm btn-primary" type="button">Actualizar</button>
-                          <button id="delete" class="btn btn-sm btn-danger" onclick=getDeletebtn() type="button">Eliminar</button>
+                          <button id="delete" class="btn btn-sm btn-danger" type="button">Eliminar</button>
                         </div>
                       </td>
                                           
@@ -73,6 +73,5 @@
         </table>
     </div>
 </div>
-<script src="{% static 'GestionarMaterias/event.js'}"></script>
 </div>
 {% endblock %}
