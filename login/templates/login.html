@@ -12,7 +12,8 @@
             class="img-fluid" alt="Sample image">
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form>
+          <form action="{% url "login" %}" method="POST">
+          {% csrf_token %}
   
             <div class="divider d-flex align-items-center my-4">
               <p class="text-center fw-bold mx-5 mb-0">Login de Sesion</p>
@@ -20,26 +21,32 @@
   
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" id="form3Example3" class="form-control form-control-lg"
+              <input type="email" id="form3Example3" name="correo" class="form-control form-control-lg"
                 placeholder="Ingresa tu correo electronico" />
-              <label class="form-label" for="form3Example3">Email address</label>
+              <label class="form-label" for="form3Example3">Correo</label>
             </div>
   
             <!-- Password input -->
             <div class="form-outline mb-3">
-              <input type="password" id="form3Example4" class="form-control form-control-lg"
+              <input type="password" id="form3Example4" name="contraseña" class="form-control form-control-lg"
                 placeholder="Ingresa tu contraseña" />
-              <label class="form-label" for="form3Example4">Password</label>
+              <label class="form-label" for="form3Example4">Contraseña</label>
             </div>
   
             <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="button" class="btn btn-primary btn-lg"
-                style="padding-left: 2.5rem; padding-right: 2.5rem;">Ingresar</button>
+              <input type="submit" class="btn btn-primary btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;" value="Ingresar">
               <p class="small fw-bold mt-2 pt-1 mb-0">No tienes una cuenta? <a href="{% url 'create_user' %}"
                   class="link-danger">Registrate</a></p>
             </div>
-  
-          </form>
+            
+            </form>
+            {% if error_messages%}
+            <div class="btn btn-danger">
+              {{ error_message }}
+              {{ user }}
+            {% endif %}
+        </div>
         </div>
       </div>
     </div>
