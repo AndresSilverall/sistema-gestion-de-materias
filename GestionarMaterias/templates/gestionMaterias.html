@@ -1,6 +1,6 @@
 {% extends "main.html" %}
 
-
+{% load static %}
 {% block title %} Gestion de cursos {% endblock %}
 
 {% block body %}
@@ -62,10 +62,14 @@
                     <td>{{materia.fecha|date:"Y-m-d H:i"}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Botones de Acción">
-                            <form action="{% url "delete" materia.id %}" method="POST">
+                            <form action="/" method="POST">
                                 {% csrf_token %}
                                 <input type="submit" class="btn btn-sm btn-primary" value="Actualizar">
-                                <input type="submit" class="btn btn-sm btn-danger" value="Eliminar"> 
+                            </form>
+                            <br>
+                            <form action="{% url "delete" materia.id %}" method="POST">
+                                {% csrf_token %}
+                                <input type="submit" id="delete" class="btn btn-sm btn-danger" onclick=preventDelete()  value="Eliminar"> 
                             </form>
                         </div>
                       </td>
@@ -76,5 +80,6 @@
         </table>
     </div>
 </div>
+<script src="{% static "js/main.js" %}"></script>
 </div>
 {% endblock %}
