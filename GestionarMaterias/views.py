@@ -23,11 +23,14 @@ def register_topic(request):
     return render(request, "gestionMaterias.html")
 
 
+def update_topic(request):
+    return render(request, "actualizar.html")
+
+
 def delete_topic(request, pk: int):
     materias = MaricularMaterias.objects.get(id=pk)
     materias.delete()
     return redirect("home")
-
 
 
 def info_user(request):

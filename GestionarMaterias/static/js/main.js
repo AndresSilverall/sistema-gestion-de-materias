@@ -1,4 +1,4 @@
-const getBtn = document.getElementById("delete")
+const getBtn = document.querySelector("#delete")
 
 function preventDelete() {
     getBtn.addEventListener("click", (e) => {

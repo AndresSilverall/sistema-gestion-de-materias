@@ -40,6 +40,12 @@
 
 <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
     <h1> Listado de materias matriculadas</h1>
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline align-content-end">
+          <input class="form-control mr-sm-0" type="search" placeholder="Buscar materia" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-1" type="submit">Buscar</button>
+        </form>
+      </nav>
     <div class="table-responsive py-2">
         <table class="table table-striped">
             <thhead>
@@ -62,7 +68,7 @@
                     <td>{{materia.fecha|date:"Y-m-d H:i"}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Botones de Acción">
-                            <form action="/" method="POST">
+                            <form action="{% url "update" %}" method="POST">
                                 {% csrf_token %}
                                 <input type="submit" class="btn btn-sm btn-primary" value="Actualizar">
                             </form>
