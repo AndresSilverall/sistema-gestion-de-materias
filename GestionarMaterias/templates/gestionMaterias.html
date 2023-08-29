@@ -62,8 +62,11 @@
                     <td>{{materia.fecha|date:"Y-m-d H:i"}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Botones de Acción">
-                          <button id="update" class="btn btn-sm btn-primary" type="button">Actualizar</button>
-                          <button id="delete" class="btn btn-sm btn-danger" type="button">Eliminar</button>
+                            <form action="{% url "delete" materia.id %}" method="POST">
+                                {% csrf_token %}
+                                <input type="submit" class="btn btn-sm btn-primary" value="Actualizar">
+                                <input type="submit" class="btn btn-sm btn-danger" value="Eliminar"> 
+                            </form>
                         </div>
                       </td>
                                           
