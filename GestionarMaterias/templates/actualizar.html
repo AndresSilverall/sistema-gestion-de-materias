@@ -16,9 +16,17 @@
     <div class="form-group">
         <br>
         <button type="submit" class="btn btn-success "> Actualizar</button>
-        <button type="submit" class="btn btn-danger "> Cancelar</button>
+        <button type="submit" class="btn btn-danger value="{% url "home" %}" "> Cancelar</button>
     </div>
 </form>
+    {% if messages %}
+    {% for i in messages %}
+    <div class="alert alert-success">
+        {{ i }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    
 {% endblock %}
 
 
