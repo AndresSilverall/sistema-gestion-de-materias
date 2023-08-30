@@ -19,3 +19,19 @@ App web para la gestion y administracion de materias de una universidad en la qu
 4. Abre tu navegador y ve a: `http://127.0.0.1:8000/`
    
 
+## Capturas
+![home](assets/home.png)
+
+### Login
+![login](assets/login.png)
+
+### Registro
+![registro](assets/register.png)
+
+### Contacto
+![Contacto](assets/contact.png)
+
+
+
+
+
