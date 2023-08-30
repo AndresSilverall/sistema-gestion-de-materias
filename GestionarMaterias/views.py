@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from . models import MaricularMaterias
 from django.db.models import Q
+from crearUsuario.models import RegistroDeUsuario
+
 
 # Create your views here.
 def home(request):
@@ -11,7 +13,7 @@ def home(request):
     return render(request, "gestionMaterias.html", context=contexto)
 
 
-#@login_required
+
 def register_topic(request):
     if request.method == "POST":
         codigo = request.POST.get("codigo")
