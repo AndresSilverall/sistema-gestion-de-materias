@@ -1,6 +1,6 @@
 # Sistema de gestion de materias 
 
-App web para la gestion y administracion de materias de una universidad en la que se lleva a cabo operaciones CRUD, cuenta con un logion de sesion.
+App web para la gestion y administracion de materias de una universidad en la que se lleva a cabo operaciones CRUD, cuenta con un login de sesion.
 
 ## Tecnologías usadas
 
