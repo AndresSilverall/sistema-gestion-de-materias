@@ -5,13 +5,13 @@
     {% csrf_token %}
     <div class="form-group">
         <h3> Actualizar Materia</h3>
-        <input type="text"  name="codigo" class="form-control" placeholder="Codigo">
+        <input type="text"  name="codigo" class="form-control" placeholder="Codigo" required>
     </div>
     <div class="form-group">
-        <input type="text"  name="nombre" class="form-control" placeholder="Nombre"  max="40">
+        <input type="text"  name="nombre" class="form-control" placeholder="Nombre"  max="40" required>
     </div>
     <div class="form-group">
-        <input type="text" name="creditos" class="form-control" placeholder="Creditos">
+        <input type="text" name="creditos" class="form-control" placeholder="Creditos" required>
     </div>
     <div class="form-group">
         <br>
@@ -21,12 +21,14 @@
 </form>
     <br>
     {% if messages %}
-    {% for i in messages %}
-    <div class="alert alert-success">
-        {{ i }}
-    </div>
+    {% for message in messages %}
+        {% if message.tags == 'success' %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endif %}
     {% endfor %}
-    {% endif %}
+{% endif %}
     
 {% endblock %}
 

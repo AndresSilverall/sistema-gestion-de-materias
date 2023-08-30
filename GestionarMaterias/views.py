@@ -26,6 +26,22 @@ def register_topic(request):
 
 
 def update_topic(request):
+    if request.method == "POST":
+        codigo = request.POST.get("codigo")
+        nombre = request.POST.get("nombre")
+        creditos = request.POST.get("creditos")
+        
+        try:
+            topic = MaricularMaterias.objects.get(id=codigo)
+            topic.nombre = nombre
+            topic.creditos = creditos
+            topic.save()
+            
+            messages.success(request, "¡Matricula actualizada con éxito!")
+            
+        except MaricularMaterias.DoesNotExist:
+            messages.error(request, "¡No se encontró la materia!")
+
     return render(request, "actualizar.html")
 
 
