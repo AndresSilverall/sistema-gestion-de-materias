@@ -6,8 +6,9 @@
 {% block body %}
 
 <div class="row">
+    <link rel="stylesheet" href="{% static "styles/font.css" %}">
     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
-        <h1> Gestion de materias</h1>
+        <h1><center> Gestion de materias</center></h1>
         <div class="card">
             <div class="card-body">
                 <form action="{% url 'register' %}" method="POST">
@@ -23,7 +24,7 @@
                     </div>
                     <div class="form-group">
                         <br>
-                        <button type="submit" class="btn btn-success "> Matricular</button>
+                        <button type="submit" id="matricular" class="btn btn-success "> Matricular</button>
                     </div>
                 </form>
             </div>
@@ -37,9 +38,8 @@
             {% endif %}
 
     </div>
-
 <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
-    <h1> Listado de materias matriculadas</h1>
+    <h1> <center> Listado de materias matriculadas</center></h1>
     <nav class="navbar navbar-light bg-light">
         <form class="form-inline align-content-end">
           <input class="form-control mr-sm-0" type="search" placeholder="Buscar materia" aria-label="Search">
@@ -55,7 +55,7 @@
                     <th>Nombre</th>
                     <th>Creditos</th>
                     <th>Fecha</th>
-                    <th>Accion</th>
+                    <th>Acción</th>
                 </tr>
             </thhead>
             <tbody>
@@ -75,6 +75,7 @@
                             <br>
                             <form action="{% url "delete" materia.id %}" method="POST">
                                 {% csrf_token %}
+                                
                                 <input type="submit" id="delete" class="btn btn-sm btn-danger" onclick=preventDelete()  value="Eliminar"> 
                             </form>
                         </div>
