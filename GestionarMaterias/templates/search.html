@@ -1,0 +1,16 @@
+{% extends 'gestionMaterias.html' %}
+
+{% block title %} Resultados de busqueda {% endblock %}
+{% block body %}
+
+{{query}}
+{{results}}
+<ul>
+    {% for item in results %}
+        <li>{{ item.nombre }}</li>
+    {% empty %}
+        <li>No se encontraron resultados.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
+

@@ -41,8 +41,9 @@
 <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
     <h1> <center> Listado de materias matriculadas</center></h1>
     <nav class="navbar navbar-light bg-light">
-        <form class="form-inline align-content-end">
-          <input class="form-control mr-sm-0" type="search" placeholder="Buscar materia" aria-label="Search">
+        <form class="form-inline align-content-end" name="q" method="GET" action="{% url "search" %}">
+            {% csrf_token %}
+          <input class="form-control mr-sm-0" type="search" placeholder="Buscar materia" aria-label="Search" required>
           <button class="btn btn-outline-success my-2 my-xxl-4" type="submit">Buscar</button>
         </form>
       </nav>

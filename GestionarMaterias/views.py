@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from . models import MaricularMaterias
+from django.db.models import Q
 
 # Create your views here.
 def home(request):
@@ -38,7 +39,7 @@ def update_topic(request):
             topic.save()
             
             messages.success(request, "¡Matricula actualizada con éxito!")
-            
+
         except MaricularMaterias.DoesNotExist:
             messages.error(request, "¡No se encontró la materia!")
 
@@ -53,6 +54,20 @@ def delete_topic(request, pk: int):
 
 def info_user(request):
     return render(request, "contacto.html")
+
+
+def search_topic(request):
+    query = request.GET.get("q")
+    if query:
+        results = MaricularMaterias.objects.filter(Q(nombre__icontains=query))
+    else:
+        results = []
+
+        context = {
+            'results': results,
+            'query': query}
+        
+        return render(request, 'search.html', context)
 
 
 
