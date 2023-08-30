@@ -22,6 +22,9 @@ App web para la gestion y administracion de materias de una universidad en la qu
 ## Capturas
 ![home](assets/home.png)
 
+### Eventos
+![evenos](events.png)
+
 ### Login
 ![login](assets/login.png)
 
