@@ -71,13 +71,14 @@
                         <div class="btn-group" role="group" aria-label="Botones de Acción">
                             <form action="{% url "update" %}" method="POST">
                                 {% csrf_token %}
-                                <input type="submit" class="btn btn-sm btn-primary" value="Actualizar">
+                                <button id="update" class="btn btn-sm btn-primary"> Actualizar </button> 
+
                             </form>
                             <br>
                             <form action="{% url "delete" materia.id %}" method="POST">
                                 {% csrf_token %}
                                 
-                                <input type="submit" id="delete" class="btn btn-sm btn-danger" onclick=preventDelete()  value="Eliminar"> 
+                                <button id="delete" class="btn btn-sm btn-danger" onclick=preventDelete()> Eiminar </button> 
                             </form>
                         </div>
                       </td>
