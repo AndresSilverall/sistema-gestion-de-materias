@@ -23,7 +23,7 @@ App web para la gestion y administracion de materias de una universidad en la qu
 ![home](assets/home.png)
 
 ### Eventos
-![evenos](events.png)
+![evenos](assets/events.png)
 
 ### Login
 ![login](assets/login.png)
